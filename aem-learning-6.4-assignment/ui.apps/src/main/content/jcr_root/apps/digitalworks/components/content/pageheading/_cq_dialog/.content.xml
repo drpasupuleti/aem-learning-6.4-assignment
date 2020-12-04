@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Page Heading"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs= "digitalworks.pageheading.clientlibs"
+          helpPath="https://www.adobe.com/go/aem_cmp_title_v1"
+          trackingFeature="core-components:title:v1">
+    <content
+            granite:class="cmp-pageheading__editor"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                    granite:class="page-heading-items"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                <granite:data
+                        jcr:primaryType="nt:unstructured"
+                        pageHeadingTypeValue="h1"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Leave empty to use the page title."
+                            fieldLabel="Title"
+                            renderHidden="{Boolean}true"
+                            name="./jcr:title"/>
+                    <type
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                            fieldLabel="Type / Size"
+                            renderHidden="{Boolean}true"
+                            name="./type">
+                        <items jcr:primaryType="nt:unstructured">
+                            <def
+                                    jcr:primaryType="nt:unstructured"
+                                    text="(default)"
+                                    value=""/>
+                            <h1
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H1"
+                                    value="h1"/>
+                            <h2
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H2"
+                                    value="h2"/>
+                            <h3
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H3"
+                                    value="h3"/>
+                            <h4
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H4"
+                                    value="h4"/>
+                            <h5
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H5"
+                                    value="h5"/>
+                            <h6
+                                    jcr:primaryType="nt:unstructured"
+                                    text="H6"
+                                    value="h6"/>
+                        </items>
+                    </type>
+                    <onPageTitleGroup
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                        <items jcr:primaryType="nt:unstructured">
+                            <onPageTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="On-Page Title"
+                                    name="./onPageTitle"/>
+                            <pageTitleCheckBox
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="/libs/granite/ui/components/coral/foundation/form/checkbox"
+                                    text="Get On-Page Title from Page Properties"
+                                    name="./pageTitleCheckBox"
+                                    uncheckedValue="false"
+                                    value="true"/>
+                        </items>
+                    </onPageTitleGroup>
+                    <pageHeadingType
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Type"
+                            name="./pageHeadingType"
+                            value="H1"
+                            disabled="{Boolean}true"/>
+                    <analyticsID
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="This field is used to configure Analytics."
+                            fieldLabel="ID"
+                            name="./analyticsID"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,15 @@
+<!--<h1 class="cmp-title__text" >${properties.onPageTitle}</h1>-->
+
+
+<div class="cmp-title"
+     data-sly-use.pageHeading="com.digitalworks.core.models.PageHeading"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.text="${pageHeading.onPageTitle}">
+    <h1 class="cmp-title__text" data-sly-test="${pageHeading.pageTitleCheckBox == 'true'}">${currentPage.pageTitle}</h1>
+    <h1 class="cmp-title__text" data-sly-test="${pageHeading.pageTitleCheckBox == 'false'}">${text}</h1>
+</div>
+
+
+
+
+
